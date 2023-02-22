@@ -2,29 +2,41 @@
   <div>
     <h1>{{ title }}</h1>
     <ul class="displayNone">
-      <li v-bind:id="id">React</li>
-      <li v-bind:id="id">Vue</li>
-      <li v-bind:id="id">Angular</li>
+      <li :id="id">React</li>
+      <li :id="id">Vue</li>
+      <li :id="id">Angular</li>
     </ul>
-    <p v-bind:class="textType ? 'primary' : 'danger'">
+    <p :class="textType ? 'primary' : 'danger'">
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
     </p>
 
-    <p v-bind:class="['largeText', 'danger']">
+    <p :class="['largeText', 'danger']">
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
     </p>
-    <p v-bind:class="['largeText', textType ? 'primary' : 'danger']">
+    <p :class="['largeText', textType ? 'primary' : 'danger']">
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
     </p>
 
     <p
-      v-bind:class="{
+      :class="{
         danger: textType,
       }"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
     </p>
-    <button @click="methods.changeColor()">Click Me</button>
+
+    <p
+      :style="{
+        color: primaryColor,
+      }"
+    >
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+    </p>
+
+    <p :style="customStyle">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </p>
+    <button>Click Me</button>
   </div>
 </template>
 
@@ -36,10 +48,12 @@ export default {
       disabled: true,
       id: 12,
       textType: true,
-      methods: {
-        changeColor() {
-          this.textType = !this.textType;
-        },
+      primaryColor: "orange",
+
+      customStyle: {
+        fontSize: "2rem",
+        color: "red",
+        fontWeight: "bold",
       },
     };
   },
