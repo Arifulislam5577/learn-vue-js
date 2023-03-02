@@ -15,10 +15,22 @@
       <div
         v-for="product in filterdProduct"
         :key="product.id"
-        class="mt-5 border bg-white"
+        class="mt-5 border bg-white p-5 rounded"
       >
         <h1>{{ product.title }}</h1>
         <h1>${{ product.price }}</h1>
+      </div>
+
+      <hr />
+
+      <div class="mt-10 w-44 text-center">
+        <h1 class="text-2xl font-bold">{{ count }}</h1>
+        <button @click="count++" class="bg-blue-600 p-3 text-white rounded m-3">
+          Decrement
+        </button>
+        <button @click="count--" class="bg-blue-600 p-3 text-white rounded m-3">
+          Increment
+        </button>
       </div>
     </div>
   </section>
@@ -36,6 +48,8 @@ export default {
       ],
 
       name: "",
+
+      count: 0,
     };
   },
   methods: {
@@ -50,6 +64,17 @@ export default {
 
     filterdProduct() {
       return this.products.filter((pd) => pd.price > 200);
+    },
+  },
+  watch: {
+    count(newValue, oldValue) {
+      if (newValue === 10) {
+        this.count = 100;
+      }
+
+      if (oldValue === 105) {
+        this.count = 9;
+      }
     },
   },
 };
