@@ -7,8 +7,7 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus,
           tempore.
         </p>
-
-        <input type="text" v-model="name" />
+        <Input v-model="name" />
         <button
           @click="$emit('closeModal', name)"
           class="bg-blue-600 mt-3 px-6 py-2 text-white"
@@ -21,16 +20,17 @@
 </template>
 
 <script>
+import Input from "./Input.vue";
 export default {
+  name: "Popup",
+  data() {
+    return {
+      name: "",
+    };
+  },
   components: {
-    name: "Popup",
+    Input,
     emits: ["closeModal"],
-
-    data() {
-      return {
-        name: "",
-      };
-    },
   },
 };
 </script>
