@@ -1,27 +1,33 @@
 <template>
   <div class="container text-center my-5">
-    <h1>Root</h1>
-    <A />
+    <button
+      @click="showModal = true"
+      class="bg-violet-600 text-white px-6 py-2"
+    >
+      Open Modal
+    </button>
+    <Popup v-show="showModal" @closeModal="closePopup" />
   </div>
 </template>
 
 <script>
-import A from "./components/A.vue";
+import Popup from "./components/ComponentEvent.vue";
 export default {
   components: {
-    A,
+    Popup,
   },
 
   data() {
     return {
-      name: "Arif",
+      showModal: false,
     };
   },
 
-  provide() {
-    return {
-      userName: this.name,
-    };
+  methods: {
+    closePopup(name) {
+      this.showModal = false;
+      console.log(`Name IS `, name);
+    },
   },
 };
 </script>
