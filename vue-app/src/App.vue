@@ -1,36 +1,29 @@
 <template>
-  <Header />
-  <div class="container py-5">
-    <div
-      class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between"
-    >
-      <Product
-        v-for="product in products"
-        :key="product.id"
-        :product="product"
-      />
-    </div>
+  <div class="container text-center my-5">
+    <h1>Root</h1>
+    <A />
   </div>
 </template>
 
 <script>
-import { products } from "./data/data";
-import Product from "./components/Product.vue";
-import Header from "./components/Header.vue";
+import A from "./components/A.vue";
 export default {
   components: {
-    Product,
-    Header,
+    A,
   },
+
   data() {
     return {
-      products: products,
+      name: "Arif",
     };
   },
-  methods: {},
-  computed: {},
-  watch: {},
+
+  provide() {
+    return {
+      userName: this.name,
+    };
+  },
 };
 </script>
 
-<style></style>
+<style scoped></style>
