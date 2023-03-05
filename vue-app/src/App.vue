@@ -1,28 +1,21 @@
 <template>
-  <div class="container py-5">
-    <teleport to="#newApp">
-      <Portal />
-    </teleport>
+  <div class="py-5">
+    <h2 class="text-xl font-bold text-center">Learn HTTP</h2>
+    <HttpGet />
   </div>
 </template>
 
 <script>
-import TabA from "./components/TabA.vue";
-import TabB from "./components/TabB.vue";
-import Portal from "./components/Portal.vue";
+import HttpGet from "./components/HttpGet.vue";
 export default {
   components: {
-    TabA,
-    TabB,
-    Portal,
+    HttpGet,
   },
 
   data() {
-    return {
-      activeTab: "TabA",
-    };
+    return {};
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
