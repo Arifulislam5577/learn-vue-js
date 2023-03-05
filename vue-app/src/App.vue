@@ -1,14 +1,12 @@
 <template>
-  <div class="py-5 container text-center">
-    <Parent />
-  </div>
+  <HttpGet />
 </template>
 
 <script>
-import Parent from "./components/LifeCycleHook.vue";
+import HttpGet from "./components/HttpGet.vue";
 export default {
   components: {
-    Parent,
+    HttpGet,
   },
 
   data() {

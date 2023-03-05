@@ -1,18 +1,18 @@
 <template>
   <div class="container py-5 text-center">
-    <button @click="loadPost" class="px-10 py-3 bg-slate-900 text-white">
+    <!-- <button @click="loadPost" class="px-10 py-3 bg-slate-900 text-white">
       <span v-if="loading">Loading...</span>
       <span v-else>Load Post</span>
-    </button>
-
+    </button> -->
+    <h2 v-if="loading" class="text-center text-xl font-bold my-5">
+      Loading...
+    </h2>
     <div
       v-if="posts.length"
       class="grid mt-5 gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between"
     >
       <Product v-for="product in posts" :key="product.id" :product="product" />
     </div>
-
-    <h2 v-else class="mt-5 text-center font-bold">No Product Found</h2>
   </div>
 </template>
 
@@ -27,6 +27,10 @@ export default {
       loading: false,
       posts: [],
     };
+  },
+
+  created() {
+    this.loadPost();
   },
 
   methods: {
