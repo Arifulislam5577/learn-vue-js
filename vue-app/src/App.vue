@@ -15,7 +15,9 @@
           Tab B
         </button>
       </div>
-      <component :is="activeTab" />
+      <keep-alive>
+        <component :is="activeTab" />
+      </keep-alive>
     </div>
   </div>
 </template>
