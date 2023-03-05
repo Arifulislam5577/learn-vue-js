@@ -1,12 +1,14 @@
 <template>
-  <Counter />
+  <div class="mx-auto w-1/2 container py-5 text-center flex justify-center">
+    <CompositionAPI />
+  </div>
 </template>
 
 <script>
-import Counter from "./components/Counter.vue";
+import CompositionAPI from "./components/CompositionAPI.vue";
 export default {
   components: {
-    Counter,
+    CompositionAPI,
   },
 
   data() {
