@@ -1,12 +1,12 @@
 <template>
-  <HttpGet />
+  <TempRef />
 </template>
 
 <script>
-import HttpGet from "./components/HttpGet.vue";
+import TempRef from "./components/TempRef.vue";
 export default {
   components: {
-    HttpGet,
+    TempRef,
   },
 
   data() {
