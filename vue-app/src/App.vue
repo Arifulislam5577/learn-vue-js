@@ -1,12 +1,12 @@
 <template>
-  <TempRef />
+  <Counter />
 </template>
 
 <script>
-import TempRef from "./components/TempRef.vue";
+import Counter from "./components/Counter.vue";
 export default {
   components: {
-    TempRef,
+    Counter,
   },
 
   data() {
